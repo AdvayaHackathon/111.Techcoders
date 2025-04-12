@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register | AI Travel Assistant</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #5f2c82, #49a09d);
+      color: white;
+      min-height: 100vh;
+      animation: backgroundShift 10s infinite alternate;
+    }
+
+    @keyframes backgroundShift {
+      0% {
+        background: linear-gradient(135deg, #5f2c82, #49a09d);
+      }
+      100% {
+        background: linear-gradient(135deg, #1e3c72, #2a5298);
+      }
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      transition: 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #00ffcc;
+    }
+
+    .login-btn {
+      padding: 8px 16px;
+      background: #00ffcc;
+      border: none;
+      border-radius: 8px;
+      color: #222;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .login-btn:hover {
+      background: #00e6b8;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 60px auto;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    input, select {
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .submit-btn {
+      background: #00ffcc;
+      color: #222;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background: #00e6b8;
+    }
+
+    .message {
+      text-align: center;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 14px;
+      color: #ccc;
+      padding-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">🌍 Travelnest</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="login.html"><button class="login-btn">Login</button></a>
+    </div>
+  </nav>
+
+  <!-- Register Form -->
+  <div class="container">
+    <h2>Create Your Account</h2>
+    <form id="registerForm">
+      <input type="text" id="name" placeholder="Full Name" required />
+      <input type="email" id="email" placeholder="Email Address" required />
+      <input type="password" id="password" placeholder="Create Password" required />
+      <select id="interest" required>
+        <option value="">Select Your Interest</option>
+        <option value="adventure">Adventure</option>
+        <option value="relaxation">Relaxation</option>
+        <option value="culture">Cultural</option>
+        <option value="food">Food & Cuisine</option>
+        <option value="festivals">Festivals</option>
+      </select>
+      <button type="submit" class="submit-btn">Register</button>
+    </form>
+    <p class="message" id="message"></p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    🌐 Travel smarter with AI. Start your journey today!
+  </footer>
+
+  <!-- JavaScript for storing data -->
+  <script>
+    document.getElementById("registerForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const interest = document.getElementById("interest").value;
+
+      const user = { name, email, password, interest };
+      let users = JSON.parse(localStorage.getItem("users")) || [];
+
+      const exists = users.some(u => u.email === email);
+      if (exists) {
+        document.getElementById("message").textContent = "⚠️ Email already registered!";
+        return;
+      }
+
+      users.push(user);
+      localStorage.setItem("users", JSON.stringify(users));
+
+      document.getElementById("message").textContent = "✅ Registration successful! You can now log in.";
+      document.getElementById("registerForm").reset();
+    });
+  </script>
+
+</body>
+</html>

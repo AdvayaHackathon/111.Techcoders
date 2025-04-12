@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Travel Preference Form</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4f8;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .form-container {
+      background: white;
+      padding: 2rem 3rem;
+      border-radius: 15px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 500px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+      margin-bottom: 0.3rem;
+      color: #444;
+    }
+    select, input[type="text"], input[type="number"], textarea {
+      width: 100%;
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    .submit-btn {
+      margin-top: 1.5rem;
+      width: 100%;
+      padding: 0.75rem;
+      background-color: #0066cc;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .submit-btn:hover {
+      background-color: #004d99;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Plan Your Cultural Trip</h2>
+    <form id="travelForm">
+      
+      <label for="mood">What's your current mood?</label>
+      <select id="mood" name="mood" required>
+        <option value="">-- Select Mood --</option>
+        <option value="Relaxing">Relaxing</option>
+        <option value="Adventurous">Adventurous</option>
+        <option value="Romantic">Romantic</option>
+        <option value="Exciting">Exciting</option>
+        <option value="Spiritual">Spiritual</option>
+      </select>
+
+      <label for="destination">Preferred Destination Type</label>
+      <select id="destination" name="destination" required>
+        <option value="">-- Select Destination --</option>
+        <option value="Mountains">Mountains</option>
+        <option value="Beaches">Beaches</option>
+        <option value="Heritage Sites">Heritage Sites</option>
+        <option value="Villages">Villages</option>
+        <option value="Cities">Cities</option>
+      </select>
+
+      <label for="activities">Cultural Activities You’re Interested In</label>
+      <select id="activities" name="activities" multiple required>
+        <option value="Dance">Dance</option>
+        <option value="Music">Music</option>
+        <option value="Handicrafts">Handicrafts</option>
+        <option value="Local Traditions">Local Traditions</option>
+        <option value="Spiritual Practices">Spiritual Practices</option>
+      </select>
+
+      <label for="food">Favorite Local Foods</label>
+      <input type="text" id="food" name="food" placeholder="e.g., Biryani, Dosa, Chaat" />
+
+      <label for="festivals">Festivals You Want to Experience</label>
+      <input type="text" id="festivals" name="festivals" placeholder="e.g., Holi, Diwali, Hampi Utsav" />
+
+      <label for="budget">Planned Budget (in ₹)</label>
+      <input type="number" id="budget" name="budget" placeholder="e.g., 5000" required />
+
+      <button type="submit" class="submit-btn">Get Recommendations</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('travelForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert("Thank you! We'll show recommendations based on your preferences soon.");
+      // Here you can collect form data and send it to your backend or AI model
+    });
+  </script>
+</body>
+</html>

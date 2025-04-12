@@ -1,0 +1,12 @@
+body.bg-cover {
+    background-image: url('https://source.unsplash.com/1600x900/?tourism,landscape,nature');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Segoe UI', sans-serif;
+    backdrop-filter: blur(2px);
+}
+
+.card {
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+}

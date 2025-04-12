@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us | AI Travel Assistant</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #5f2c82, #49a09d);
+      color: white;
+      min-height: 100vh;
+      animation: backgroundShift 10s infinite alternate;
+    }
+
+    @keyframes backgroundShift {
+      0% {
+        background: linear-gradient(135deg, #5f2c82, #49a09d);
+      }
+      100% {
+        background: linear-gradient(135deg, #1e3c72, #2a5298);
+      }
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      transition: 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #00ffcc;
+    }
+
+    .login-btn {
+      padding: 8px 16px;
+      background: #00ffcc;
+      border: none;
+      border-radius: 8px;
+      color: #222;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .login-btn:hover {
+      background: #00e6b8;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 34px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #f0f0f0;
+      margin-top: 20px;
+    }
+
+    ul {
+      margin-top: 15px;
+      padding-left: 20px;
+      color: #f5f5f5;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 14px;
+      color: #ccc;
+      padding-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">🌍 AI Travelnest</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="login.html"><button class="login-btn">Login</button></a>
+    </div>
+  </nav>
+
+  <!-- About Us Content -->
+  <div class="container">
+    <h1>About Us</h1>
+    <p>
+      Welcome to <strong>AI Travel Assistant</strong> — a smart, user-friendly travel companion built to offer a personalized experience like no other.
+    </p>
+
+    <p>
+      We noticed a big gap in existing travel platforms — they offer <strong>generic suggestions</strong> that don’t consider your mood, preferences, or budget. So, we decided to change that.
+    </p>
+
+    <p>
+      This project was built for a Hackathon with the goal of solving the problem:
+      <em>"Tourists struggle to find personalized travel experiences."</em>
+    </p>
+
+    <p>
+      Our AI-powered assistant offers recommendations based on:
+    </p>
+
+    <ul>
+      <li>🎯 Mood & Interests</li>
+      <li>⏳ Available Time</li>
+      <li>💰 Budget</li>
+      <li>🎭 Culture & Local Festivals</li>
+      <li>🍲 Food & Local Experiences</li>
+    </ul>
+
+    <p>
+      We use intelligent algorithms, a simple UI, and smart filters to help users discover unique places, hidden gems, and culturally rich activities tailored just for them.
+    </p>
+
+    <p>
+      Explore smarter. Travel better. With AI.
+    </p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    🚀 Created by passionate students for a smarter world of travel.
+  </footer>
+
+</body>
+</html>
